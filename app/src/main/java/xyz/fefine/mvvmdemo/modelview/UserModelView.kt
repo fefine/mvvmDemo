@@ -1,5 +1,6 @@
 package xyz.fefine.mvvmdemo.modelview
 
+import android.util.Log
 import android.view.View
 import androidx.databinding.BaseObservable
 import androidx.databinding.Bindable
@@ -15,6 +16,7 @@ class UserModelView(private val user:User): Observer, BaseObservable() {
 
     override fun update(p0: Observable?, p1: Any?) {
         if (p1 is String) {
+            Log.d("hua", "change $p1")
             if (p1 == "age") {
                 notifyPropertyChanged(BR.name)
             } else if (p1 == "firstName" || p1 == "lastName") {

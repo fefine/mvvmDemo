@@ -18,20 +18,6 @@ class MainActivity : AppCompatActivity() {
 
         checkPermission(this)
 
-        val user = User()
-        user.age = 20
-        user.female = false
-        user.firstName = "Johnny"
-        user.lastName = "Depp"
-        user.imageUrl = "https://sm.ms/image/HO5FUbKgPZdnoCl"
-        user.tagline = "When Johnny Depp is young"
-
-        /// Create the view model
-        val userViewModel = UserModelView(user)
-
-        /// Data-Binding
-        val binding = DataBindingUtil.setContentView<ViewDataBinding>(this, R.layout.activity_main)
-        binding.setVariable(BR.user, userViewModel)
     }
 
     override fun onRequestPermissionsResult(requestCode: Int,
