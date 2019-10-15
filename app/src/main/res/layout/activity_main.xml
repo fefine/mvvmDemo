@@ -19,7 +19,7 @@
         android:layout_height="match_parent"
         android:baselineAligned="false"
         >
-        <fragment android:name="xyz.fefine.mvvmdemo.view.UserFragment"
+        <fragment android:name="xyz.fefine.mvvmdemo.view.ShowFragment"
             android:id="@+id/counter"
             android:layout_weight="1"
             android:layout_width="0dp"
