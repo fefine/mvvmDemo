@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <layout xmlns:android="http://schemas.android.com/apk/res/android">
     <data>
-        <variable
-            name="currentName" type="String"/>
+        <variable name="currentName" type="String"/>
+        <variable name="mv" type="xyz.fefine.mvvmdemo.viewmodel.ShowViewModel"/>
     </data>
     <LinearLayout
         android:orientation="vertical"
@@ -15,12 +15,14 @@
             android:id="@+id/txt_current_name"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@{currentName}"/>
+            android:text="@{mv.currentName}"/>
 
         <Button
             android:id="@+id/btn_update"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Click" />
+            android:text="Click"
+            android:onClick="@{mv::onClick}"
+            />
     </LinearLayout>
 </layout>
