@@ -25,7 +25,7 @@ class ShowFragment: Fragment() {
 
         model = ViewModelProviders.of(this).get(ShowViewModel::class.java)
 
-// --- start
+// --- start (not use databinding)
 //        val nameObserver = Observer<String> {
 //            newName -> txt_current_name.text = newName
 //        }

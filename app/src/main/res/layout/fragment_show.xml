@@ -1,16 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
-<layout xmlns:android="http://schemas.android.com/apk/res/android">
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:bind="http://schemas.android.com/apk/res-auto">
     <data>
-        <variable name="currentName" type="String"/>
         <variable name="mv" type="xyz.fefine.mvvmdemo.viewmodel.ShowViewModel"/>
     </data>
     <LinearLayout
         android:orientation="vertical"
         android:layout_width="match_parent"
         android:layout_height="match_parent">
-        <TextView android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="primary:"/>
         <TextView
             android:id="@+id/txt_current_name"
             android:layout_width="wrap_content"
@@ -22,7 +19,32 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Click"
+            android:onClick="@{mv::onClick}" />
+
+        <TextView
+            android:id="@+id/txt_user_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@{mv.currentUser.name}"/>
+        <TextView
+            android:id="@+id/txt_user_age"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            bind:ageBind="@{mv.currentUser.age}" />
+        <TextView
+            android:id="@+id/txt_user_gender"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@{mv.currentUser.gender}"/>
+
+
+        <Button
+            android:id="@+id/btn_update_user"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Update"
             android:onClick="@{mv::onClick}"
             />
+
     </LinearLayout>
 </layout>
