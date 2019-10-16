@@ -21,21 +21,21 @@ import xyz.fefine.mvvmdemo.viewmodel.WordViewModel
 class MainActivity : AppCompatActivity() {
 
     private lateinit var wordViewModel: WordViewModel
-     private lateinit var dataBinding: ViewDataBinding
+    // private lateinit var dataBinding: ViewDataBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        // setContentView(R.layout.activity_main)
+        setContentView(R.layout.activity_main)
 
-        dataBinding = DataBindingUtil.setContentView<ViewDataBinding>(this, R.layout.activity_main)
-        dataBinding.lifecycleOwner = this
+        // dataBinding = DataBindingUtil.setContentView<ViewDataBinding>(this, R.layout.activity_main)
+        // dataBinding.lifecycleOwner = this
 
         fab.setOnClickListener {
             val intent = Intent(this@MainActivity, NewWordActivity::class.java)
             startActivityForResult(intent, newWordActivityRequestCode)
         }
 
-        val adapter = WordListAdapter(this)
+        val adapter = WordListAdapter()
         recyclerview.adapter  = adapter
         recyclerview.layoutManager = LinearLayoutManager(this)
 
